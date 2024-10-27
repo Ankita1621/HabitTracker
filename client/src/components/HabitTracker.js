@@ -10,7 +10,7 @@ const HabitTracker = () => {
   useEffect(() => {
     const fetchHabits = async () => {
       try {
-        const response = await fetch('https://habittracker-backend-iwy7.onrender.com/api/habits');
+        const response = await fetch('https://habittracker-backend-3vfv.onrender.com/api/habits');
         const data = await response.json();
         setHabits(data);
       } catch (error) {
@@ -27,7 +27,7 @@ const HabitTracker = () => {
     const newHabit = { title: habit, frequency, completed: false };
 
     try {
-      const response = await fetch('https://habittracker-backend-iwy7.onrender.com/api/habits', {
+      const response = await fetch('https://habittracker-backend-3vfv.onrender.com/api/habits', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -50,7 +50,7 @@ const HabitTracker = () => {
 
   const handleDeleteHabit = async (id) => {
     try {
-      const response = await fetch(`https://habittracker-backend-iwy7.onrender.com/api/habits/${id}`, {
+      const response = await fetch(`https://habittracker-backend-3vfv.onrender.com/api/habits/${id}`, {
         method: 'DELETE',
       });
 
@@ -73,7 +73,7 @@ const HabitTracker = () => {
 
     try {
       const habitToUpdate = updatedHabits.find((h) => h._id === id);
-      await fetch(`https://habittracker-backend-iwy7.onrender.com/api/habits/${id}`, {
+      await fetch(`https://habittracker-backend-3vfv.onrender.com/api/habits/${id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
