@@ -10,7 +10,7 @@ const HabitTracker = () => {
   useEffect(() => {
     const fetchHabits = async () => {
       try {
-        const response = await fetch('https://habittracker-backend-iwy7.onrender.com');
+        const response = await fetch('https://habittracker-backend-iwy7.onrender.com/api/habits');
         const data = await response.json();
         setHabits(data);
       } catch (error) {
