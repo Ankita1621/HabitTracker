@@ -72,7 +72,7 @@ const HabitTracker = () => {
     setHabits(updatedHabits);
 
     try {
-      await fetch(`http://localhost:5000/api/habits/${id}`, {
+      await fetch(`https://habittracker-backend-iwy7.onrender.com/api/habits`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
