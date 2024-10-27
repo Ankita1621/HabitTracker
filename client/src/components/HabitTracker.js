@@ -50,7 +50,7 @@ const HabitTracker = () => {
 
   const handleDeleteHabit = async (id) => {
     try {
-      const response = await fetch('https://habittracker-backend-iwy7.onrender.com/api/habits'/${id}`, {
+      const response = await fetch(`https://habittracker-backend-iwy7.onrender.com/api/habits/${id}`, {
         method: 'DELETE',
       });
 
@@ -72,12 +72,13 @@ const HabitTracker = () => {
     setHabits(updatedHabits);
 
     try {
-      await fetch(`https://habittracker-backend-iwy7.onrender.com/api/habits`, {
+      const habitToUpdate = updatedHabits.find((h) => h._id === id);
+      await fetch(`https://habittracker-backend-iwy7.onrender.com/api/habits/${id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ completed: !habit.completed }),
+        body: JSON.stringify({ completed: habitToUpdate.completed }),
       });
     } catch (error) {
       console.error('Error updating habit:', error);
