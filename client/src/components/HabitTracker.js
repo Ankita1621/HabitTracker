@@ -27,7 +27,7 @@ const HabitTracker = () => {
     const newHabit = { title: habit, frequency, completed: false };
 
     try {
-      const response = await fetch('http://localhost:5000/api/habits', {
+      const response = await fetch('https://habittracker-backend-iwy7.onrender.com/api/habits', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -50,7 +50,7 @@ const HabitTracker = () => {
 
   const handleDeleteHabit = async (id) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/habits/${id}`, {
+      const response = await fetch('https://habittracker-backend-iwy7.onrender.com/api/habits'/${id}`, {
         method: 'DELETE',
       });
 
