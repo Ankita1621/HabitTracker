@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Home.css'; // Import the CSS file for styling
 
 const Home = () => {
@@ -14,7 +15,7 @@ const Home = () => {
         <h2>Get Started</h2>
         <ul>
           <li>
-            <a className="home-link" href="/habit-tracker">Track Your Habits</a>
+             <Link className="home-link" to="/habit-tracker">Track Your Habits</Link>
           </li>
         </ul>
       </div>
